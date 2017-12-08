@@ -14,7 +14,7 @@ namespace RbfloteScanner {
         /// </summary>
         [STAThread]
         static void Main(string[] args) {
-            string url = "localhost/test"; // replace with empty string for production
+            string url = ""; // replace with empty string for production
             string schema_name = "rbf-scan:";
             foreach (string a in args) {
                 if (a.Length > schema_name.Length) {
@@ -124,14 +124,13 @@ namespace RbfloteScanner {
                 int dpi = 200;
                 Property horizontal_dpi = item.Properties.get_Item("6147");
                 horizontal_dpi.set_Value(dpi);
+                
                 Property vertical_dpi = item.Properties.get_Item("6148");
                 vertical_dpi.set_Value(dpi);
 
                 /* 200dpi A4 page in pixels 1654 x 2339 pix */
                 Property horizontal_size_px = item.Properties.get_Item("6151");
                 horizontal_size_px.set_Value(1654);
-                Property vertical_size_px = item.Properties.get_Item("6152");
-                vertical_size_px.set_Value(2339);
 
                 try
                 {
